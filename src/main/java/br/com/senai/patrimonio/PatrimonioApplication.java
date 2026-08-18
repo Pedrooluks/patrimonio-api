@@ -27,7 +27,9 @@ public class PatrimonioApplication {
 		Endereco enderecoComArgumentos = new Endereco("Líbano jose gomes",
 				"489", "Perto do posto de saúde",
 				"Santa luzia","Criciúma", "SC");
-		System.out.println(enderecoComArgumentos.getBairro());
+
+		empresa.setEndereco(enderecoComArgumentos);
+		System.out.println(empresa.getEndereco().getBairro());
 
 
 
