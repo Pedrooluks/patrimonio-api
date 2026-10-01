@@ -1,6 +1,6 @@
 package br.com.senai.patrimonio.model;
 
-public class Pessoa {
+public class Pessoa{
     private long  id;
     private String nome;
     private String cpf;
@@ -38,4 +38,17 @@ public class Pessoa {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    /* Metodo com implementação padrão na super classe mas que pode ser sobrescrito com (@Override) pelas
+    *  na subclasses ver {@link Funcionario*getIdentidade()}.
+    *  isso caracterisa o polimorfismo, o mesma chamada getIdentificação()
+    *  se comporta de forma diferente dependendo do objeto em memória  *
+     */
+
+    public String getIdentificacao (){
+        return this.nome + " ( CPF; " + this.cpf + ")" ;
+    }
+
+
+
 }

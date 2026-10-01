@@ -1,6 +1,6 @@
 package br.com.senai.patrimonio.model;
 
-public class Sala implements Localizavel{
+public class Sala implements Localizavel,BuscarEmpresaVinculada{
 
     private long id;
     private String nome;
@@ -62,5 +62,11 @@ public class Sala implements Localizavel{
     public String getDescricaoLocalizavel() {
         String nomeBloco = bloco != null ? bloco.getNome() : "Sem bloco";
         return "Sala " + this.nome + "(Bloco " + nomeBloco + ")";
+    }
+
+    @Override
+    public String getEmpresaVinculada() {
+        return empresa != null ? "Bloco" + empresa.getNome() :
+                "Empresa não informada";
     }
 }
