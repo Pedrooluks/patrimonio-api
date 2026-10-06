@@ -51,6 +51,16 @@ public class Funcionario extends Pessoa implements Localizavel, BuscarEmpresaVin
         return "Responsabilidade de "+ getNome() + " (" + cargo + ")";
     }
 
+    /**
+     * CONCEITO DE POO: POLIMORFISMO (sobrescrita / @Override)
+     * --------------------------------------------------------
+     * Funcionário redefine o comportamento herdado de {@link Pessoa#getIdentificacao()}
+     * incluindo o cargo na descrição. Quem chama pessoa. "pessoa.getIdentificacao()"
+     * através de referência do tipoo Pessoa não precisa se o
+     * o objeto real é um funcionário a versão correta é executada em
+     * tempo de execução (polimosrfismo dinamico)
+     */
+
     @Override
     public String getEmpresaVinculada() {
         return empresa != null ? "Empresa " + empresa.getNome() :

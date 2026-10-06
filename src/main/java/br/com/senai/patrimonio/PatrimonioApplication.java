@@ -1,5 +1,8 @@
 package br.com.senai.patrimonio;
 
+import br.com.senai.patrimonio.atividades.Computador;
+import br.com.senai.patrimonio.atividades.Equipamento;
+import br.com.senai.patrimonio.atividades.Veiculo;
 import br.com.senai.patrimonio.avaliacao.enums.Nivel;
 import br.com.senai.patrimonio.avaliacao.Participante;
 import br.com.senai.patrimonio.model.*;
@@ -7,6 +10,8 @@ import br.com.senai.patrimonio.model.enums.Cargo;
 import br.com.senai.patrimonio.model.enums.EstadoConservacao;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
 
 @SpringBootApplication
 public class PatrimonioApplication {
@@ -106,5 +111,21 @@ public class PatrimonioApplication {
 		funcionario1.setCargo(Cargo.DIRETOR);
 		System.out.println(funcionario1.getIdentificacao());
 
+		System.out.println("textando atividades");
+		Equipamento equipamento = new Equipamento("mesa" , 6000 );
+        Equipamento computador = new Computador("notbook", 5000);
+		Equipamento veiculo = new Veiculo("sandero", 1000);
+
+		exibirRelatorio(equipamento);
+		exibirRelatorio(computador);
+		exibirRelatorio(veiculo);
+
 	}
+	public static void exibirRelatorio(Equipamento item){
+		System.out.println("item " + item.getNome());
+		System.out.println("valor inicial " + item.getValorInicial());
+		System.out.println("depreciação " + item.calcularDepreciacao());
+		System.out.println("--------------------------");
+	}
+
 }
